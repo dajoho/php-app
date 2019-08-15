@@ -7,16 +7,45 @@
  */
 namespace Dajoho\Php\App;
 
-/*
+use DI\ContainerBuilder;
+
+/**
  * Class Base
  * @package Dajoho\Php\App
  */
-class Base
+abstract class Base
 {
+    /**
+     * @var \DI\Container
+     */
+    private $container;
+
     /**
      * App constructor
      */
     public function __construct()
     {
+        try {
+            $builder = new ContainerBuilder();
+            $this->container = $builder->build();
+        } catch (\Exception $e) {
+            //TODO: deal with this exception
+        }
+    }
+
+    /**
+     * @return bool
+     */
+    protected function isDevelopmentEnvironment()
+    {
+        return false;
+    }
+
+    /**
+     * @return \DI\Container
+     */
+    public function getContainer()
+    {
+        return $this->container;
     }
 }
