@@ -1,0 +1,20 @@
+{
+  "name": "dajoho/php-app",
+  "description": "Base libraries for a PHP project",
+  "type": "library",
+  "license": "CC-BY-NC-4.0",
+  "authors": [
+    {
+      "name": "Dave Holloway",
+      "email": "dh@dajoho.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Dajoho\\Php\\App\\": "src/"
+    }
+  },
+  "require": {
+    "php-di/php-di": "^6.0"
+  }
+}
