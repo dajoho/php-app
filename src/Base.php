@@ -8,10 +8,10 @@
 namespace Dajoho\Php\App;
 
 /*
- * Class App
+ * Class Base
  * @package Dajoho\Php\App
  */
-class App
+class Base
 {
     /**
      * App constructor
